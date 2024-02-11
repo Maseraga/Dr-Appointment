@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Website</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        
+        }
+        h1,h3,h4{
+    font-weight: 600; 
+    text-align: center;
+        }
+        nav {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 1000;
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px; 
+}
+
+        section {
+            text-align: center;
+            padding: 0; 
+        }
+        #Home {
+    background-image: url(cli.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #fff; 
+    padding-top: 100px; 
+    padding-bottom: 100px;
+    position: relative;
+    height: 100vh;
+}
+
+#Home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background color */
+    z-index: 1;
+}
+
+#Home h1 {
+    position: relative;
+    z-index: 2;
+    font-size: 36px; /* Adjust the font size as needed */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#Home h4 {
+    position: relative;
+    z-index: 2;
+    font-size: 16px; 
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+        
+#About img,
+#Address img {
+    width: 300px; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto 20px; 
+}
+
+        #About{
+            
+            background-image: url(back.jpg); 
+            background-size: cover;
+            background-position: center;
+            color: #fff; 
+            padding-top: 100px; 
+            padding-bottom: 100px; 
+        
+        }
+        #Appointment_Form {
+    background-image: url(tira.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.appointment-form{
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+#Address {
+    background-image: url(mase.jpg); 
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+        #Appointment_Form,
+        #Address {
+            background-color: #f2f2f2;
+        }
+
+        .appointment-form {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        input, select, button {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        #confirmation-message {
+            color: green;
+            margin-top: 10px;
+        }
+       
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<div class="lol">
+<nav>
+    <a href="#Home">Home</a>
+    <a href="#About">About Us</a>
+    <a href="#Appointment_Form">Appointment Form</a>
+    <a href="#Address">Address</a>
+</nav>
+</div>
+
+<section id="Home">
+    <h1><strong>WELCOME TO OUR AGELESS AURA SKIN CLINIC</strong></h1>
+    <h4><strong>Welcome to AgeLess Aura Skin Clinic, where your skin's health and beauty are our top priorities.</strong></h4>
+    
+</section>
+
+
+<section id="About" >
+    <h1><strong>About Us</strong></h1>
+    <img src="ADDRESS.jpg" alt="ADDRESS">
+    <p>Welcome to Ageless Aura clinic, your trusted destination for comprehensive dermatological care.At AgeLess Aura, we are dedicated to providing exceptional skin health services tailored to meet your unique needs.
+<br/>With a team of experienced dermatologists and skincare specialists, We offer a wide range of services, including medical dermatology, cosmetic dermatology, and advanced skincare treatments.<br/>Our goal is to deliver personalized solutions that promote healthy, radiant skin for our patients.
+<br/>At AgeLess Aura clinic, we combine cutting-edge technology with compassionate care to ensure that every patient receives the highest quality treatment in a comfortable and welcoming environment. <br/>Whether you're seeking treatment for a specific skin condition or looking to enhance your natural beauty, we are here to help you achieve your skincare goals.<br/>Trust your skin to the experts at AgeLess Aura clinic. Schedule your appointment today and take the first step towards healthier, happier skin.</p>
+</section>
+
+<section id="Appointment_Form">
+    <h1><strong>Appointment Form</strong></h1>
+    <div class="appointment-form">
+        <img src="download.jpg" width="200px" height="200px" alt="download">
+        <h1>Dermatologist Appointment Booking</h1>
+        <form id="appointmentForm" onsubmit="submitForm(); return false;">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" placeholder="Full Name" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" pattern="[0-9]{10}" required placeholder="10-digit number"><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="email" required><br>
+            
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" required min="<?php echo date('Y-m-d'); ?>"><br>
+            
+            <label for="time">Select Time:</label>
+            <input type="time" id="time" required><br>
+            
+            <div class="form-group">
+                <label for="reason">Reason for Appointment:</label>
+                <select id="reason" name="reason" required>
+                    <option value="consultation">Consultation</option>
+                    <option value="skin-issue">Skin Issue</option>
+                    <option value="follow-up">Follow-up</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <button type="submit">Book Appointment</button>
+        </form>
+        <div id="confirmation-message"></div>
+    </div>
+</section>
+
+<section id="Address">
+    <div class="Address">
+        <h1><strong>Address</strong></h1>
+        <h2>AgeLess Aura Skin Clinic</h2>
+            <h3>Caring for your skin, enhancing your confidence is our priority.</h3>
+           <h3>Trading hours</h3>
+           
+           Monday to Friday<br>
+            8:00am - 17:00pm
+           Saturday</br>
+           8:00am - 15:00pm<br/>
+           <h3>Contact Us</h3>
+           Tel.0143489566<br/>
+           WhatsApp:0794830574<br/>
+           Instagram Page:Ageless Aura Clinic<br/>
+           Facebook Page:Ageless Aura Clinic<br>
+           <b>Email us: <a href="mailto:AgelessAura@gmail.com">AgelessAura@gmail.com</a></b>
+           <h3>Physical Address</h3>
+           145 Schoemen Street<br>
+           Lephalale<br>
+           Limpopo<br>
+           0555<br/>
+           <img src="lo.png" width="180px" height="160px"alt="lo.jng">     
+           
+    </div>
+</section>
+<footer>
+    <p>&copy; 2024 AgeLess Aura Skin Clinic. All rights reserved.</p>
+    <p>Designed By Paulina Seleka</p>
+</footer>
+
+
+<script>
+    function submitForm() {
+        var form = document.getElementById('appointmentForm');
+        var confirmationMessage = document.getElementById('confirmation-message');
+        var currentDate = new Date(); // Get the current date
+        
+        // Get the selected date from the input field
+        var selectedDate = new Date(document.getElementById('date').value);
+        var selectedTime = document.getElementById('time').value;
+        
+        // Check if the selected time is within the working hours (8am to 5pm)
+        var selectedHour = parseInt(selectedTime.split(':')[0]);
+        if (selectedHour < 8 || selectedHour >= 17) {
+            confirmationMessage.textContent = 'Please select a time between 8am and 5pm.';
+            return;
+        }
+        
+        if (selectedDate < currentDate) {
+            // Display an error message if the selected date is before the current date
+            confirmationMessage.textContent = 'Please select a date on or after the current date.';
+        } else if (form.checkValidity()) {
+            // Perform additional actions here (e.g., send data to server)
+            confirmationMessage.textContent = 'Successfully booked!';
+            
+            // Optional: Clear form fields after successful submission
+            form.reset();
+        } else {
+            confirmationMessage.textContent = ''; // Clear previous confirmation message
+        }
+    }
+</script>
+
+</body>
+</html>
